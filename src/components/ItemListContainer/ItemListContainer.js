@@ -1,3 +1,3 @@
-export const ItemListContainer =()=>{
-    return(<div><p>Texto provisorio</p></div>)
+export const ItemListContainer =({texto})=>{
+    return(<div><p> {texto}</p></div>)
 }

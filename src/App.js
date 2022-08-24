@@ -10,7 +10,7 @@ function App() {
     <div className="App">
      
       <NavBar/>
-      <ItemListContainer/>
+      <ItemListContainer texto="texto provisorio"/>
       
     </div>
   );
