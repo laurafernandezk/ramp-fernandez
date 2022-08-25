@@ -5,13 +5,17 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
+
 function App() {
+ 
   return (
     <div className="App">
      
       <NavBar/>
       <ItemListContainer texto="texto provisorio"/>
       
+      
+  
     </div>
   );
 }
