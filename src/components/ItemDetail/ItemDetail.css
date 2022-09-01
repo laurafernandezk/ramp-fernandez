@@ -1,0 +1,32 @@
+.cajaDetalle{ 
+    height: 520px;
+    width: 800px;
+    float: left;
+border: solid 2px grey;
+margin: 30px 10%;
+box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2)}
+
+.imagenDetalle{
+    height: 350px;
+    width: 350px;
+    margin-left:40px ;
+    float: left;
+
+}
+
+h2{margin: 25px auto;
+color: grey}
+
+img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+
+.datos{
+    float: right;
+    margin: 30px;
+    width: 300px;
+}
+
