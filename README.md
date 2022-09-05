@@ -1,11 +1,10 @@
 ## **Ramp**
 ## e-commerce project
 
+This project was carried out during the React JS course at CoderHouse, between August-October of 2022.
+
 ### Initialized with [Create React App](https://github.com/facebook/create-react-app).
 ### React v18.2.0
-
-
-This project was carried out during the React JS course at CoderHouse, between August-October of 2022.
 
 
 ## **Getting Started:**
