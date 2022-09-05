@@ -2,7 +2,7 @@ import './Item.css'
 export const Item= ({informacion})=>{
 
     return(
-        <div className='caja'>
+        <div className='caja'key={informacion.id}>
             <h2>{informacion.title}</h2>
             <div className='imagen'><img src={informacion.pictureUrl} alt=""/></div>
             <p>Descripción: {informacion.description}</p>
