@@ -1,22 +1,27 @@
 import "./ItemDetail.css";
+import { ItemCount } from "../ItemCount/ItemCount";
 
 
 
-export const ItemDetail = ({item}) => {
+export const ItemDetail = ({prod}) => {
   
  
   return (
     <>
      
         <div className="cajaDetalle">
-          <h2>{item.title}</h2>
+          <h2>{prod.title}</h2>
           <div className="imagenDetalle">
-            <img src={item.pictureUrl} alt="" />
+            <img src={prod.pictureUrl} alt="" />
           </div>
           <div className= "datos">
-          <p>Descripción: {item.description}</p>
-          <p>Código del producto: {item.id}</p>
-          <p> Precio: $ {item.price}</p>
+          <p>Descripción: {prod.description}</p>
+          <p>Código del producto: {prod.id}</p>
+          <p> Precio: $ {prod.price}</p>
+          <ItemCount
+        initial={1}
+        stock={15} 
+      />
           </div>
         </div>
       

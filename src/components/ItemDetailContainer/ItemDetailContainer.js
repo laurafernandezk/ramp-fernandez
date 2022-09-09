@@ -8,13 +8,15 @@ import { useParams } from "react-router-dom";
 export const ItemDetailContainer =()=>{
     const [prod, setProd] = useState({});
 
-  const {itemId} = useParams()
-  console.log(itemId)
+  const {id} = useParams()
+  console.log(id)
 
-  const getItem = () => {
+  const getItem = (id) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(productos);
+        const prodFiltrado = productos.find((producto) => producto.id === parseInt(id))
+        console.log("producto filtrado", prodFiltrado)
+        resolve(prodFiltrado)
       }, 2000);
     });
   };
@@ -22,17 +24,17 @@ export const ItemDetailContainer =()=>{
   useEffect(() => {
     const respuestaAsincrona = async () => {
       try {
-        const respuesta = await getItem();
-        setProd(respuesta.find((producto) => producto.id == 2))
+        const respuesta = await getItem(id);
+        setProd(respuesta)
         console.log(respuesta);
       } catch (error) {
         console.log("Error al cargar los productos");
       }
     };
     respuestaAsincrona();
-  }, [itemId]);
+  }, [id]);
 
   console.log("nuevo array", prod);
    
-    return(<><ItemDetail item={prod}/></>)
+    return(<><ItemDetail prod={prod}/></>)
 }

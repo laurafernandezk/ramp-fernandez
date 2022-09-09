@@ -15,7 +15,7 @@ function NavBar(){
        <Link to='/category/'><Nav.Link href="productos">Nuestros Productos</Nav.Link></Link>
        <Link to='/category/mar'><Nav.Link href="coleccionMar">Colección Mar</Nav.Link></Link>
        <Link to='/category/nudos'><Nav.Link href="collecionNudos">Colección Nudos</Nav.Link></Link>
-       <Link to='/'><Nav.Link href="carrito"><CartWidget icon={faCartShopping}></CartWidget></Nav.Link></Link>
+       <Link to='/cart'><Nav.Link href="carrito"><CartWidget icon={faCartShopping}></CartWidget></Nav.Link></Link>
       </Nav>
     </Container>
   </Navbar>

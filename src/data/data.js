@@ -17,7 +17,7 @@ export const productos = [
     title: "Anillo Mar",
     price: 10200,
     pictureUrl: anilloMar,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 2,
@@ -28,64 +28,68 @@ export const productos = [
     title: "Anillo Oceano",
     price: 11300,
     pictureUrl: anilloOceano,
-    category: "mar"
+    category: "mar",
   },
-  ,
   {
     id: 3,
     description:
-    "Anillo de Plata 925, con piedra de la Luna de talla brillante",
-  information:
-    "Segundo en su serie, este anillo se compone por una piedra lunar facetada, con tonos azules propios. Inspirado en el mar y sus olas, en los movimientos de marea",
+      "Anillo de Plata 925, con piedra de la Luna de talla brillante",
+    information:
+      "Segundo en su serie, este anillo se compone por una piedra lunar facetada, con tonos azules propios. Inspirado en el mar y sus olas, en los movimientos de marea",
     title: "Anillo Olas",
     price: 10200,
     pictureUrl: anilloOlas,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 4,
     description: "Anillo de plata 925",
-    information: "Cada uno es único. De una serie inspirada en el mar, el anillo Marea fue modelado completament en 3D con computadora, para luego ser fundido en Plata 925. Todas sus terminaciones son cuidadosamente realizadas a mano.",
+    information:
+      "Cada uno es único. De una serie inspirada en el mar, el anillo Marea fue modelado completament en 3D con computadora, para luego ser fundido en Plata 925. Todas sus terminaciones son cuidadosamente realizadas a mano.",
     title: "Anillo Marea",
     price: 9500,
     pictureUrl: anilloMarea,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 5,
     description: "Anillo de plata 925",
-    information: "Cada uno es único. De una serie inspirada en el mar, el anillo Gotas fue modelado completament en 3D con computadora, para luego ser fundido en Plata 925. Todas sus terminaciones son cuidadosamente realizadas a mano.",
+    information:
+      "Cada uno es único. De una serie inspirada en el mar, el anillo Gotas fue modelado completament en 3D con computadora, para luego ser fundido en Plata 925. Todas sus terminaciones son cuidadosamente realizadas a mano.",
     title: "Anillo Gotas",
     price: 9500,
     pictureUrl: anilloGotas,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 6,
     description: "Anillo de plata 925 con piedra Zirconia Swarovski de 2mm",
-    information: "Cada uno es único. De una serie inspirada en el mar, este delicado anillo fue tallado en cera, para luego ser fundido en Plata 925, su piedra es una Zirconia Swarovski de 2mm.",
+    information:
+      "Cada uno es único. De una serie inspirada en el mar, este delicado anillo fue tallado en cera, para luego ser fundido en Plata 925, su piedra es una Zirconia Swarovski de 2mm.",
     title: "Anillo Fruto",
     price: 9200,
     pictureUrl: anilloFruto,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 7,
     description: "Anillo de plata 925",
-    information: "Inspirado en el mar y sus aguas, este delicado anillo fue tallado en cera, para luego ser fundido en Plata 925. ",
+    information:
+      "Inspirado en el mar y sus aguas, este delicado anillo fue tallado en cera, para luego ser fundido en Plata 925. ",
     title: "Anillo Delta",
     price: 8100,
     pictureUrl: anilloDelta,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 8,
     description: "Anillo de plata 925 con 3 piedras Zirconias Swarovski",
-    information: "De esta serie inspirada en el mar, el amanecer es ese momento mágico que todos quieren contemplar. Este delicado anillo fue modelado en 3D con Rhinoceros, para luego ser fundido en Plata 925, sus 3 piedras son Zirconias Swarovski de distintos tamaños",
+    information:
+      "De esta serie inspirada en el mar, el amanecer es ese momento mágico que todos quieren contemplar. Este delicado anillo fue modelado en 3D con Rhinoceros, para luego ser fundido en Plata 925, sus 3 piedras son Zirconias Swarovski de distintos tamaños",
     title: "Anillo Amanecer",
     price: 10200,
     pictureUrl: anilloAmanecer,
-    category: "mar"
+    category: "mar",
   },
   {
     id: 9,
@@ -94,6 +98,6 @@ export const productos = [
     title: "Anillo Nudos",
     price: 10200,
     pictureUrl: anilloNudos,
-    category: "nudos"
-  },
+    category: "nudos",
+  }
 ];
