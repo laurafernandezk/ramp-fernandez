@@ -1,15 +1,12 @@
-
-button{
-   
-    border: gray;
-    padding: 10px; 
+button {
+  border: gray;
+  padding: 10px;
 }
 
-.boton{
-    margin: 50px auto;
-
+.boton {
+  margin: 50px auto;
 }
 
-.botonAgregar{
-    margin: 10px;
+.botonAgregar {
+  margin: 10px;
 }

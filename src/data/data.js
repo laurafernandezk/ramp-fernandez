@@ -18,6 +18,7 @@ export const productos = [
     price: 10200,
     pictureUrl: anilloMar,
     category: "mar",
+    stock: 20
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ export const productos = [
     price: 11300,
     pictureUrl: anilloOceano,
     category: "mar",
+    stock: 2
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ export const productos = [
     price: 10200,
     pictureUrl: anilloOlas,
     category: "mar",
+    stock: 5
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export const productos = [
     price: 9500,
     pictureUrl: anilloMarea,
     category: "mar",
+    stock: 10
   },
   {
     id: 5,
@@ -60,6 +64,7 @@ export const productos = [
     price: 9500,
     pictureUrl: anilloGotas,
     category: "mar",
+    stock: 12
   },
   {
     id: 6,
@@ -70,6 +75,7 @@ export const productos = [
     price: 9200,
     pictureUrl: anilloFruto,
     category: "mar",
+    stock: 2
   },
   {
     id: 7,
@@ -80,6 +86,7 @@ export const productos = [
     price: 8100,
     pictureUrl: anilloDelta,
     category: "mar",
+    stock: 25
   },
   {
     id: 8,
@@ -90,6 +97,7 @@ export const productos = [
     price: 10200,
     pictureUrl: anilloAmanecer,
     category: "mar",
+    stock: 1
   },
   {
     id: 9,
@@ -99,5 +107,6 @@ export const productos = [
     price: 10200,
     pictureUrl: anilloNudos,
     category: "nudos",
+    stock: 0
   }
 ];
