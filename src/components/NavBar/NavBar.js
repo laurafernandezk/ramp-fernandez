@@ -12,10 +12,10 @@ function NavBar(){
     <Container>
       <Link to ='/'><Navbar.Brand>Ramp</Navbar.Brand></Link>
       <Nav className="me-auto">
-       <Link to='/category/'><Nav.Link href="productos">Nuestros Productos</Nav.Link></Link>
-       <Link to='/category/mar'><Nav.Link href="coleccionMar">Colección Mar</Nav.Link></Link>
-       <Link to='/category/nudos'><Nav.Link href="collecionNudos">Colección Nudos</Nav.Link></Link>
-       <Link to='/cart'><Nav.Link href="carrito"><CartWidget icon={faCartShopping}></CartWidget></Nav.Link></Link>
+       <Link to='/category/'>Nuestros Productos</Link>
+       <Link to='/category/mar'>Colección Mar</Link>
+       <Link to='/category/nudos'>Colección Nudos</Link>
+       <Link to='/cart'><CartWidget icon={faCartShopping}></CartWidget></Link>
       </Nav>
     </Container>
   </Navbar>

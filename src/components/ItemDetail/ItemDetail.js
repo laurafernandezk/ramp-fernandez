@@ -1,9 +1,14 @@
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useState } from "react";
 
 export const ItemDetail = ({ prod }) => {
+
+  const [eventOnAdd, setEventOnAdd] = useState(true)
   const onAdd = (contador) => {
    alert(`Productos agregados al carrito ${contador}`);
+   setEventOnAdd(!eventOnAdd)
+   console.log(eventOnAdd)
   };
 
   return (
@@ -18,7 +23,7 @@ export const ItemDetail = ({ prod }) => {
           <p>Código del producto: {prod.id}</p>
           <p> Precio: $ {prod.price}</p>
 
-          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
+          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} eventOnAdd={eventOnAdd} />
         </div>
       </div>
     </>
