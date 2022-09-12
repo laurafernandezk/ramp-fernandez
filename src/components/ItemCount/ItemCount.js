@@ -24,10 +24,13 @@ export const ItemCount= ({initial, stock, onAdd,eventOnAdd})=>{
             <br/>
             <button onClick={()=>{onAdd(contador)}}className='botonAgregar'>Agregar al carrito</button>
             </>
-            : 
+            :
+            <>
+             
             <Link to= '/cart'> 
             <button className='botonAgregar'>Finalizar Compra</button>
             </Link>
+            </>
              }
             </div>
     )

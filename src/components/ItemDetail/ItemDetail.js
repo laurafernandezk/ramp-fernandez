@@ -1,16 +1,20 @@
 import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { productos } from "../../data/data";
 
 export const ItemDetail = ({ prod }) => {
-
-  const [eventOnAdd, setEventOnAdd] = useState(true)
+  const [eventOnAdd, setEventOnAdd] = useState(true);
+  
+  const{addItem}=useContext(CartContext)
+  
+  
   const onAdd = (contador) => {
-   alert(`Productos agregados al carrito ${contador}`);
-   setEventOnAdd(!eventOnAdd)
-   console.log(eventOnAdd)
-  };
-
+   addItem(prod,contador)
+    setEventOnAdd(!eventOnAdd)
+   }  
+  
   return (
     <>
       <div className="cajaDetalle">
@@ -23,7 +27,12 @@ export const ItemDetail = ({ prod }) => {
           <p>Código del producto: {prod.id}</p>
           <p> Precio: $ {prod.price}</p>
 
-          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} eventOnAdd={eventOnAdd} />
+          <ItemCount
+            initial={1}
+            stock={prod.stock}
+            onAdd={onAdd}
+            eventOnAdd={eventOnAdd}
+          />
         </div>
       </div>
     </>

@@ -6,9 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {CartContainer} from './components/CartContainer/CartContainer'
+import { CartProvider } from './context/CartContext';
 function App() {
  
   return (
+    <CartProvider>
     <BrowserRouter>
       <div className="App">
         <NavBar/>
@@ -21,6 +23,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 
