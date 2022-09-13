@@ -9,8 +9,10 @@ const {removeItem} = useContext(CartContext)
         <h3>{item.title}</h3>
         <div className="cart-img"><img src={item.pictureUrl} alt="" /></div>
         <div className="cart-description">
+        <p>Precio Unitartio: ${item.price}</p>
         <p>Cantidad: {item.quantity}</p>
-        <p>$ {item.price}</p>
+        <p>Precio Total: ${item.totalPrice}</p>
+    
         </div>
         <div className="cart-btn">
           <button onClick={() => removeItem(item.id)}> Eliminar Producto </button>

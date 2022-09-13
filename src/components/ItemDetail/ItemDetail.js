@@ -7,7 +7,7 @@ import { productos } from "../../data/data";
 export const ItemDetail = ({ prod }) => {
   const [eventOnAdd, setEventOnAdd] = useState(true);
   
-  const{addItem}=useContext(CartContext)
+  const{addItem, sumar}=useContext(CartContext)
   
   
   const onAdd = (contador) => {
