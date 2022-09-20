@@ -1,41 +1,42 @@
 import { ItemList } from "../ItemList/ItemList";
-import { productos } from "../../data/data";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { baseDatos } from "../../utils/firebase";
 
 export const ItemListContainer = () => {
   const { categoryId } = useParams();
-  const [prod, setProd] = useState([]);
-  const obtenerProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productos);
-      }, 2000);
-    });
-  };
+  const [listadoProductos, setListadoProductos] = useState([]);
+
   useEffect(() => {
-    const funcionAsincrona = async () => {
+    const getData = async () => {
       try {
-        const listadoProductos = await obtenerProductos();
-        if (!categoryId) {
-          setProd(listadoProductos);
-        } else {
-          const filtroProd = listadoProductos.filter(
-            (item) => item.category === categoryId
-          );
-          setProd(filtroProd);
-          console.log(filtroProd);
-        }
+        //referencia a dónde se consulta en la base de datos
+        let queryRef = !categoryId
+          ? collection(baseDatos, "items")
+          : query(
+              collection(baseDatos, "items"),
+              where("category", "==", categoryId)
+            );
+        //llamado final a la base de datos que retorna una promesa
+        const response = await getDocs(queryRef);
+        //se accede a la propiedad de la promesa que tiene guardados los docs
+        const docs = response.docs;
+        //se itera en el array y se crean nuevos objetos formado por la info (docs.data()) y el id (docs.id) que vienen por separado
+        const data = docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setListadoProductos(data);
       } catch (error) {
-        console.log("Error");
+        console.log(error);
       }
     };
-    funcionAsincrona();
+    getData();
   }, [categoryId]);
-
+  console.log("listado productos", listadoProductos);
   return (
     <>
-      <ItemList productos={prod} />
+      <ItemList productos={listadoProductos} />
     </>
   );
 };

@@ -15,8 +15,7 @@ export const ItemCount= ({initial, stock, onAdd,eventOnAdd})=>{
     return(
             <div className='boton'>
                 <p>Stock disponible: {stock}</p>
-                {eventOnAdd
-                ?
+                {
                 <>
             <button onClick={addCount}>+</button>
             <span>  {contador}  </span>
@@ -24,14 +23,16 @@ export const ItemCount= ({initial, stock, onAdd,eventOnAdd})=>{
             <br/>
             <button onClick={()=>{onAdd(contador)}}className='botonAgregar'>Agregar al carrito</button>
             </>
-            :
+}
             <>
-             
+             {eventOnAdd&&
+                
             <Link to= '/cart'> 
             <button className='botonAgregar'>Finalizar Compra</button>
             </Link>
+}
             </>
-             }
+             
             </div>
     )
 }

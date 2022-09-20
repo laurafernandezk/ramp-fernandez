@@ -2,34 +2,34 @@ import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import { productos } from "../../data/data";
 
-export const ItemDetail = ({ prod }) => {
-  const [eventOnAdd, setEventOnAdd] = useState(true);
+
+export const ItemDetail = ({ producto }) => {
+  const [eventOnAdd, setEventOnAdd] = useState(false);
   
-  const{addItem, sumar}=useContext(CartContext)
+  const{addItem}=useContext(CartContext)
   
   
   const onAdd = (contador) => {
-   addItem(prod,contador)
+   addItem(producto,contador)
     setEventOnAdd(!eventOnAdd)
    }  
   
   return (
     <>
       <div className="cajaDetalle">
-        <h2>{prod.title}</h2>
+        <h2>{producto.title}</h2>
         <div className="imagenDetalle">
-          <img src={prod.pictureUrl} alt="" />
+          <img src={producto.pictureUrl} alt="" />
         </div>
         <div className="datos">
-          <p>Descripción: {prod.description}</p>
-          <p>Código del producto: {prod.id}</p>
-          <p> Precio: $ {prod.price}</p>
+          <p>Descripción: {producto.description}</p>
+          <p>Código del producto: {producto.id}</p>
+          <p> Precio: $ {producto.price}</p>
 
           <ItemCount
             initial={1}
-            stock={prod.stock}
+            stock={producto.stock}
             onAdd={onAdd}
             eventOnAdd={eventOnAdd}
           />

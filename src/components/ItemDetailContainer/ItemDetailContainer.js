@@ -1,36 +1,34 @@
 
 import { ItemDetail } from "../ItemDetail/ItemDetail"
-import { productos } from "../../data/data";
+import { doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { baseDatos } from "../../utils/firebase";
 
 
 export const ItemDetailContainer =()=>{
-    const [prod, setProd] = useState({});
+    const [producto, setProducto] = useState({});
 
   const {id} = useParams()
 
-  const getItem = (id) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const prodFiltrado = productos.find((producto) => producto.id === parseInt(id))
-        resolve(prodFiltrado)
-      }, 2000);
-    });
-  };
+  
 
   useEffect(() => {
-    const respuestaAsincrona = async () => {
+    const getProduct = async () => {
       try {
-        const respuesta = await getItem(id);
-        setProd(respuesta)
+        const queryRef = doc(baseDatos, "items", id)
+        const response = await getDoc(queryRef);
+       
+        const data = { ...response.data(), id: response.id}
+        
+        setProducto(data)
 
       } catch (error) {
-        console.log("Error al cargar los productos");
+        console.log(error);
       }
     };
-    respuestaAsincrona();
+    getProduct();
   }, [id]);
    
-    return(<><ItemDetail prod={prod}/></>)
+    return(<><ItemDetail producto={producto}/></>)
 }
