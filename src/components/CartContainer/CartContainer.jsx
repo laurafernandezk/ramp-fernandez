@@ -2,7 +2,7 @@ import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 import { CartItem } from "../CartItem/CartItem";
 import { Link } from 'react-router-dom'
-
+import { Order } from '../Order/Order'
 export const CartContainer = () => {
   const { productCartList, clear, getTotalPrice } = useContext(CartContext);
 
@@ -15,6 +15,7 @@ export const CartContainer = () => {
       ))}
         <h2>Precio Total del Carrito: $ {getTotalPrice()}</h2>
         <button onClick={ clear}>Vaciar Carrito</button>
+        <Order/>
       </>
        : 
        <>
