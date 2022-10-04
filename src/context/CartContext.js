@@ -1,6 +1,6 @@
 import { createContext } from "react";
-
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 export const CartContext = createContext()
 
@@ -19,11 +19,22 @@ export const CartProvider =({children})=>{
             newList[productIndex].quantity += quantity
             newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price
             setProductCartList(newList)
+            Swal.fire({
+                icon: 'success',
+                title: `${product.title} agregado al carrito`,
+                showConfirmButton: false,
+                timer: 2000,
+              })
         }else{
         const newProduct = { ...product, quantity: quantity, totalPrice: quantity * product.price };
         const newList =[...productCartList, newProduct]
         setProductCartList(newList)
-        console.log("carrito de compras", productCartList)
+        Swal.fire({
+            icon: 'success',
+            title: `${product.title} agregado al carrito`,
+            showConfirmButton: false,
+            timer: 2000,
+          })
     }
     }
     const removeItem =(idProduct)=> {

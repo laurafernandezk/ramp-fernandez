@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { baseDatos } from "../../utils/firebase";
+import Container from 'react-bootstrap/Container';
+import './ItemListContainer.css'
 
 export const ItemListContainer = () => {
   const { categoryId } = useParams();
@@ -35,8 +37,9 @@ export const ItemListContainer = () => {
   }, [categoryId]);
   console.log("listado productos", listadoProductos);
   return (
-    <>
+   
+     <Container  className="contenedor fluid">
       <ItemList productos={listadoProductos} />
-    </>
+      </Container>
   );
 };

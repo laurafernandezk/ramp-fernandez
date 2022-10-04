@@ -1,13 +1,7 @@
-button {
-  border: gray;
-  padding: 10px;
-  margin:10px
-}
+.btn-item-count{
+    margin: 7px;
 
-.boton {
-  margin: 50px auto;
 }
-
-.botonAgregar {
-  margin: 10px;
+.div-item-count{
+    margin:20px;
 }
