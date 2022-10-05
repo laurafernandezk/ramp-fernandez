@@ -14,23 +14,50 @@ import "./Order.css";
 
 export const Order = () => {
   const { productCartList, getTotalPrice } = useContext(CartContext);
-  const [selectOrder, setSelectOrder] = useState("Efectivo");
-  const [inputValue, setInputValue] = useState("hola")
 
-  const handleOnchange = (e) => setSelectOrder(e.target.value);
+  const [userForm, setUserForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    select: "Efectivo",
+  });
 
-  
+  const handleChange = (e) => {
+    setUserForm({ ...userForm, [e.target.name]: e.target.value });
+  };
+
+  const validate = (name, phone, email) => {
+    if ((name || "invalid") === "invalid" || name.length < 4)
+      return "El campo Name es incorrecto";
+    if ((phone || "invalid") === "invalid" || isNaN(phone) || phone.length < 7)
+      return "El campo Phone es incorrecto";
+    if (
+      (email || "invalid") === "invalid" ||
+      !email.includes("@") ||
+      email.lenght < 6
+    )
+      return "El campo Email es incorrecto";
+  };
+
+  const errorMessage = validate(userForm.name, userForm.phone, userForm.email);
+
+  const inputArray = [
+    {
+      type: "text",
+      name: "name",
+    },
+    { type: "number", name: "phone" },
+    { type: "email", name: "email" },
+  ];
   const sendOrder = (e) => {
     e.preventDefault();
-    const handleOnchangeInput= (e)=> {console.log("hola")
-    }
-
-
+    validate(userForm.name, userForm.phone, userForm.email);
     const orden = {
       buyer: {
         name: e.target[0].value,
         phone: e.target[1].value,
         email: e.target[2].value,
+        pago: userForm.select,
       },
       items: productCartList.map((product) => {
         return {
@@ -65,46 +92,42 @@ export const Order = () => {
     <>
       <h2 className="h2-order">Datos de contacto</h2>
       <form onSubmit={sendOrder}>
-        <input type="text " placeholder="name" className="input-order" onChange={handleOnchangeInput} />
-        {selectOrder === "" && <p>no puede estar vacio</p> }
-        <input type="number " placeholder="phone" className="input-order" />
-        <input type="email " placeholder="email" className="input-order" />
+        {inputArray.map((input) => (
+          <input
+            key={input.name}
+            type={input.type}
+            placeholder={input.name}
+            name={input.name}
+            className="input-order"
+            onChange={handleChange}
+          />
+        ))}
         <label className="input-order">
-          {" "}
           Medio de pago:
-          <select className="select-order" onChange={handleOnchange}>
-            <option>Efectivo</option>
-            <option>Tarjeta de Debito</option>
-            <option>Tarjeta de Credito</option>
+          <select
+            name="select"
+            className="select-order"
+            onChange={handleChange}
+          >
+            <option>Efectivo al retirar</option>
+            <option>Transferencia Bancaria</option>
           </select>
         </label>
-        {selectOrder === "Efectivo" ? (
+        {userForm.select === "Efectivo" ? (
           ""
         ) : (
-          <>
-            <input
-              type="text "
-              placeholder="Titular de la tarjeta"
-              className="input-order"
-            />
-            <input
-              type="number"
-              placeholder="Número de la tarjeta"
-              className="input-order"
-            />
-            <input
-              type="number "
-              placeholder="Código de seguridad"
-              className="input-order"
-            />
-            <input
-              type="date"
-              placeholder="Fecha de vencimiento"
-              className="input-order"
-            />
-          </>
+          <div className="div-order">
+            <p>Datos bancarios</p>
+            <p>Titular de Cuenta: Mónica Guzman</p>
+            <p>Banco Macro</p>
+            <p>Número de cuenta: 26568133692</p>
+            <p>CBU: 25486565689462333 </p>
+          </div>
         )}
-        <button type="submit">Finalizar Compra</button>
+        <p className="p-order">{errorMessage}</p>
+        <button type="submit" disabled={errorMessage}>
+          Finalizar Compra
+        </button>
       </form>
     </>
   );

@@ -1,27 +1,19 @@
-.cart-item{
-    width: 90%;
-    height: auto;
-    margin: 30px auto;
-    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    
+.cart-item {
+  width: 90%;
+  height: auto;
+  margin: 30px auto;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  padding: 30px;
 }
 
-.cart-img{
-   width: 100%;
-    
+.cart-img {
+  width: 100%;
 }
 
-.cart-description{
-    
-    margin:  30px auto; 
-    box-sizing: border-box;
-   
+.cart-description {
+  margin: 30px auto;
+  box-sizing: border-box;
 }
-.cart-btn{
-    margin: 30px auto 5px auto;
+.cart-btn {
+  margin: 30px auto 5px auto;
 }
-
-
-
-

@@ -1,14 +1,24 @@
-.input-order{
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-
+.input-order {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
 }
-.h2-order{
-    margin: 20px auto
+.h2-order {
+  margin: 20px auto;
 }
 
-.select-order{
-    display:inline-block;
-    padding: 7px
+.select-order {
+  display: inline-block;
+  padding: 7px;
+}
+
+.div-order {
+  border: grey 1px solid;
+  width: 70%;
+  margin: 20px auto;
+  padding: 15px 10px;
+}
+
+.p-order {
+  color: red;
 }

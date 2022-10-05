@@ -19,5 +19,15 @@ This project was carried out during the React JS course at CoderHouse, between A
   #### _For layout, styles and some components._
 - ### React-Router-Dom v6.3.0
   #### _For app routing._
-- ### React-hook-form v7.34.0
-  #### _For data capture and form validation._
+- ### Sweetalert2 v11.4.37
+  #### _For custom alerts._
+- ### React-fontawesome v0.2.0
+  #### _For custom icons._
+
+## Mobile view
+<img src="./src/assets/images/mobile.gif">
+
+## Laptop view
+<img src="./src/assets/images/laptop.gif">
+
+
